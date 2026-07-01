@@ -1,0 +1,17 @@
+<RCC>
+    <!--
+        QSimpleScada SCADA QML Widgets 资源清单
+        - 包含 IndeemaSoftware/EEIoT 的 3 个图元
+        - 资源前缀: qrc:/qsimplescada/widgets/
+        - main.cpp 中通过 QMLConfig::instance().appendQMLPath() 自动发现
+    -->
+    <qresource prefix="/qsimplescada/widgets">
+        <file>EEIoT/qmldir</file>
+        <file>EEIoT/Linear.qml</file>
+        <file>EEIoT/Linear.png</file>
+        <file>EEIoT/Knob.qml</file>
+        <file>EEIoT/Knob.png</file>
+        <file>EEIoT/WaterLevel.qml</file>
+        <file>EEIoT/WaterLevel.png</file>
+    </qresource>
+</RCC>

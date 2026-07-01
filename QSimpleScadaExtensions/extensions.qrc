@@ -1,0 +1,13 @@
+<RCC>
+    <!--
+        QSimpleScadaExtensions 资源清单
+        我们自己的扩展 SCADA QML 图元(基于 QDashBoard 的图表风格)
+        资源前缀: qrc:/qsimplescada/extensions/
+    -->
+    <qresource prefix="/qsimplescada/extensions">
+        <file>ValueLabel.qml</file>
+        <file>TrendChart.qml</file>
+        <file>PieChart.qml</file>
+        <file>BarGraph.qml</file>
+    </qresource>
+</RCC>

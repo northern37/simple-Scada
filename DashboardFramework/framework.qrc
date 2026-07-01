@@ -1,0 +1,12 @@
+<RCC>
+    <!--
+        DashboardFramework 资源清单
+        借鉴 QDashBoard 的 UI 容器设计,但用 Qt 6 风格
+        资源前缀: qrc:/qsimplescada/framework/
+    -->
+    <qresource prefix="/qsimplescada/framework">
+        <file>TopPanel.qml</file>
+        <file>Sidebar.qml</file>
+        <file>Notification.qml</file>
+    </qresource>
+</RCC>
