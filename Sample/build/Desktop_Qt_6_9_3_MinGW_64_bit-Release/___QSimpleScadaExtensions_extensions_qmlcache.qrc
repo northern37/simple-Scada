@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<RCC>
+    <qresource prefix="/qsimplescada/extensions">
+        <file alias="ValueLabel.qml">../../../QSimpleScadaExtensions/ValueLabel.qml</file>
+        <file alias="TrendChart.qml">../../../QSimpleScadaExtensions/TrendChart.qml</file>
+        <file alias="PieChart.qml">../../../QSimpleScadaExtensions/PieChart.qml</file>
+        <file alias="BarGraph.qml">../../../QSimpleScadaExtensions/BarGraph.qml</file>
+    </qresource>
+</RCC>

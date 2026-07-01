@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<RCC>
+    <qresource prefix="/qsimplescada/widgets">
+        <file alias="EEIoT/qmldir">../../../QSimpleScadaWidgets/EEIoT/qmldir</file>
+        <file alias="EEIoT/Linear.qml">../../../QSimpleScadaWidgets/EEIoT/Linear.qml</file>
+        <file alias="EEIoT/Linear.png">../../../QSimpleScadaWidgets/EEIoT/Linear.png</file>
+        <file alias="EEIoT/Knob.qml">../../../QSimpleScadaWidgets/EEIoT/Knob.qml</file>
+        <file alias="EEIoT/Knob.png">../../../QSimpleScadaWidgets/EEIoT/Knob.png</file>
+        <file alias="EEIoT/WaterLevel.qml">../../../QSimpleScadaWidgets/EEIoT/WaterLevel.qml</file>
+        <file alias="EEIoT/WaterLevel.png">../../../QSimpleScadaWidgets/EEIoT/WaterLevel.png</file>
+    </qresource>
+</RCC>

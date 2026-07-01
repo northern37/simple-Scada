@@ -5,11 +5,15 @@
 IoSimulator::IoSimulator(QObject *parent) : DataSource(parent)
 {
     // 默认 4 个通道(对应 4 类 SCADA 图元)
-    // 调整原则:每个通道在 [0, 100] 范围内变化 40~70%,在 Linear/Knob 等图元上看明显
-    mChannels.append({"temperature", 25.0, 50.0, 10.0});  // 温度:baseline=50, ±25,范围 [25, 75]
-    mChannels.append({"pressure",    30.0, 50.0,  8.0});  // 压力:baseline=50, ±30,范围 [20, 80]
-    mChannels.append({"level",       30.0, 60.0, 12.0});  // 液位:baseline=60, ±30,范围 [30, 90]
-    mChannels.append({"flow",        25.0, 50.0,  6.0});  // 流量:baseline=50, ±25,范围 [25, 75] 避免负数
+    // 振幅加大使波形能跨越 Warning/Critical 阈值,展示报警功能
+    // temperature: 范围 ≈ [-5, 105] → 可触发 Warning>80 及 Critical>100
+    // pressure:    范围 ≈ [0,  100] → 可触发 Warning>75 及 Critical>90
+    // level:       范围 ≈ [0,  100] → 可触发 Warning>80 及 Critical>95
+    // flow:        范围 ≈ [0,  100] → 可触发 Warning>70 及 Critical>90
+    mChannels.append({"temperature", 55.0, 50.0,  8.0});
+    mChannels.append({"pressure",    50.0, 50.0, 10.0});
+    mChannels.append({"level",       50.0, 50.0, 12.0});
+    mChannels.append({"flow",        50.0, 50.0,  6.0});
 
     mTimer.setInterval(mIntervalMs);
     connect(&mTimer, &QTimer::timeout, this, &IoSimulator::onTick);

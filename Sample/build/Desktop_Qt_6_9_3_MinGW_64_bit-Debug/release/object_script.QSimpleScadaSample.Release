@@ -15,6 +15,9 @@ release/ModbusTcpSource.o
 release/ModbusRtuSource.o
 release/HistoryRecorder.o
 release/HistoryPanel.o
+release/AlarmEngine.o
+release/AlarmPanel.o
+release/AlarmNotifier.o
 release/qrc_com_indeema_QSimpleScada.o
 release/qrc_widgets.o
 release/qrc_extensions.o
@@ -31,3 +34,6 @@ release/moc_ModbusTcpSource.o
 release/moc_ModbusRtuSource.o
 release/moc_HistoryRecorder.o
 release/moc_HistoryPanel.o
+release/moc_AlarmEngine.o
+release/moc_AlarmPanel.o
+release/moc_AlarmNotifier.o

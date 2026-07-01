@@ -15,6 +15,9 @@ debug/ModbusTcpSource.o
 debug/ModbusRtuSource.o
 debug/HistoryRecorder.o
 debug/HistoryPanel.o
+debug/AlarmEngine.o
+debug/AlarmPanel.o
+debug/AlarmNotifier.o
 debug/qrc_com_indeema_QSimpleScada.o
 debug/qrc_widgets.o
 debug/qrc_extensions.o
@@ -31,3 +34,6 @@ debug/moc_ModbusTcpSource.o
 debug/moc_ModbusRtuSource.o
 debug/moc_HistoryRecorder.o
 debug/moc_HistoryPanel.o
+debug/moc_AlarmEngine.o
+debug/moc_AlarmPanel.o
+debug/moc_AlarmNotifier.o

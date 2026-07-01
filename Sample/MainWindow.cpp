@@ -38,6 +38,11 @@
 #include "History/HistoryRecorder.h"
 #include "History/HistoryPanel.h"
 
+// 报警(Phase 3.0)
+#include "Alarm/AlarmEngine.h"
+#include "Alarm/AlarmPanel.h"
+#include "Alarm/AlarmNotifier.h"
+
 // QML 图元 qrc 路径前缀
 #define QML_WIDGETS_PATH   ":/qsimplescada/widgets/EEIoT/"
 #define QML_EXTENSIONS_PATH ":/qsimplescada/extensions/"
@@ -51,6 +56,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     setupScadaBoard();
     setupSources();
     setupHistory();
+    setupAlarm();
 
     // 时钟每秒更新
     connect(&mClockTimer, &QTimer::timeout, this, &MainWindow::updateClock);
@@ -141,6 +147,14 @@ void MainWindow::buildUi()
     toolbar->addWidget(historyBtn);
     connect(historyBtn, &QPushButton::toggled,
             this, &MainWindow::onHistoryToggleClicked);
+
+    // ★ 报警面板按钮
+    mAlarmBtn = new QPushButton(tr("⚠ 报警"), toolbar);
+    mAlarmBtn->setCheckable(true);
+    mAlarmBtn->setChecked(false);
+    toolbar->addWidget(mAlarmBtn);
+    connect(mAlarmBtn, &QPushButton::toggled,
+            this, &MainWindow::onAlarmToggleClicked);
 
     connect(mSourceCombo, &QComboBox::currentTextChanged,
             this, &MainWindow::onSourceChanged);
@@ -367,6 +381,13 @@ void MainWindow::onSourceChanged(const QString &sourceName)
     } else {
         mActiveSource = nullptr;
     }
+
+    // ★ 切换后源处于停止状态,同步按钮/顶栏 UI
+    mStartBtn->setEnabled(true);
+    mStopBtn->setEnabled(false);
+    mTopStatusLabel->setText(tr("● 已停止"));
+    mTopStatusLabel->setStyleSheet("color: #f59e0b; font-size: 13px;");
+
     refreshStatusBar();
 }
 
@@ -486,6 +507,32 @@ void MainWindow::onLoadProject()
     teardownCurrentSource();
 
     mController->openProject(path);
+    mChannelRoutes.clear();     // ★ 旧路由已失效,加载项目后清空,避免挂到错误的图元
+
+    // ★ 重建通道路由:扫描加载后的板卡,轮询分配 temperature/pressure/level/flow
+    {
+        const auto boards = mController->getBoardListForDeviceIp("127.0.0.1");
+        if (!boards.isEmpty()) {
+            QScadaBoard *board = boards.first();
+            const QStringList channels = {"temperature", "pressure", "level", "flow"};
+            int chIdx = 0;
+            for (QScadaObject *obj : *board->objects()) {
+                mChannelRoutes.append({channels[chIdx % channels.size()],
+                                       obj->info()->id()});
+                chIdx++;
+            }
+        }
+    }
+
+    // ★ 自动重启当前数据源(让板卡动画恢复)
+    if (mActiveSource) {
+        mStartFailed = false;
+        mActiveSource->start();
+        mStartBtn->setEnabled(false);
+        mStopBtn->setEnabled(true);
+        mTopStatusLabel->setText(tr("● 运行中"));
+        mTopStatusLabel->setStyleSheet("color: #10b981; font-size: 13px;");
+    }
     statusBar()->showMessage(tr("项目已加载: %1").arg(path), 5000);
 }
 
@@ -560,4 +607,72 @@ void MainWindow::onAddWidget()
     statusBar()->showMessage(
         tr("已添加图元 #%1: %2").arg(mNextWidgetId).arg(widgetLabel), 5000);
     mNextWidgetId++;
+}
+
+// ============================================================
+// 报警(Phase 3.0)
+// ============================================================
+void MainWindow::setupAlarm()
+{
+    // 1. 创建引擎
+    mAlarmEngine = new AlarmEngine(this);
+
+    // 2. 添加默认阈值规则(覆盖 4 个通道)
+    AlarmRule r;
+
+    r = { "temperature", 0,    80,  AlarmLevel::Warning,  true, "", false };
+    mAlarmEngine->addRule(r);
+    r = { "temperature", 0,    100, AlarmLevel::Critical, true, "", false };
+    mAlarmEngine->addRule(r);
+
+    r = { "pressure",    0,    75,  AlarmLevel::Warning,  true, "", false };
+    mAlarmEngine->addRule(r);
+    r = { "pressure",    0,    90,  AlarmLevel::Critical, true, "", false };
+    mAlarmEngine->addRule(r);
+
+    r = { "level",       0,    80,  AlarmLevel::Warning,  true, "", false };
+    mAlarmEngine->addRule(r);
+    r = { "level",       0,    95,  AlarmLevel::Critical, true, "", false };
+    mAlarmEngine->addRule(r);
+
+    r = { "flow",        0,    70,  AlarmLevel::Warning,  true, "", false };
+    mAlarmEngine->addRule(r);
+    r = { "flow",        0,    90,  AlarmLevel::Critical, true, "", false };
+    mAlarmEngine->addRule(r);
+
+    // 3. 把 3 个数据源的 valueProduced 路由到报警引擎
+    connect(mSimulator, &DataSource::valueProduced,
+            mAlarmEngine, &AlarmEngine::updateValue);
+    connect(mModbus,    &DataSource::valueProduced,
+            mAlarmEngine, &AlarmEngine::updateValue);
+    connect(mModbusRtu, &DataSource::valueProduced,
+            mAlarmEngine, &AlarmEngine::updateValue);
+
+    // 4. 创建报警面板,包成 dock
+    mAlarmPanel = new AlarmPanel(this);
+    mAlarmPanel->setEngine(mAlarmEngine);
+
+    mAlarmDock = new QDockWidget(tr("⚠ 报警列表"), this);
+    mAlarmDock->setWidget(mAlarmPanel);
+    mAlarmDock->setFeatures(QDockWidget::DockWidgetMovable
+                            | QDockWidget::DockWidgetFloatable
+                            | QDockWidget::DockWidgetClosable);
+    mAlarmDock->hide();
+    addDockWidget(Qt::RightDockWidgetArea, mAlarmDock);
+
+    // 5. 创建弹窗通知器
+    mAlarmNotifier = new AlarmNotifier(this);
+
+    // 6. 连接报警信号 → 面板 & 通知器
+    connect(mAlarmEngine, &AlarmEngine::alarmTriggered,
+            mAlarmPanel,  &AlarmPanel::appendEvent);
+    connect(mAlarmEngine, &AlarmEngine::alarmTriggered,
+            mAlarmNotifier, &AlarmNotifier::onAlarmTriggered);
+    connect(mAlarmEngine, &AlarmEngine::alarmResolved,
+            mAlarmNotifier, &AlarmNotifier::onAlarmResolved);
+}
+
+void MainWindow::onAlarmToggleClicked(bool checked)
+{
+    mAlarmDock->setVisible(checked);
 }

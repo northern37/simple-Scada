@@ -13,7 +13,7 @@ class QModbusReply;
 
 // Modbus RTU 串口数据源
 // 通过 QModbusRtuSerialMaster 周期性读 Holding Registers
-// 配置:串口名(由 VSPD 创建的虚拟串口 COM3/COM4)+ 波特率 + 校验位 等
+// 配置:串口名(由 VSPD 创建的虚拟串口 COM1/COM2)+ 波特率 + 校验位 等
 class ModbusRtuSource : public DataSource
 {
     Q_OBJECT

@@ -20,6 +20,9 @@ class ModbusTcpSource;
 class ModbusRtuSource;
 class HistoryRecorder;
 class HistoryPanel;
+class AlarmEngine;
+class AlarmPanel;
+class AlarmNotifier;
 
 // 上位机主窗口
 class MainWindow : public QMainWindow
@@ -54,11 +57,15 @@ private slots:
     void onLoadProject();
     void onAddWidget();
 
+    // Phase 3.0 报警
+    void onAlarmToggleClicked(bool checked);
+
 private:
     void buildUi();
     void setupScadaBoard();
     void setupSources();
     void setupHistory();
+    void setupAlarm();
     void teardownCurrentSource();
 
     QScadaBoardController *mController = nullptr;
@@ -75,6 +82,13 @@ private:
     HistoryRecorder       *mHistory     = nullptr;
     HistoryPanel          *mHistoryPanel = nullptr;
     QDockWidget           *mHistoryDock  = nullptr;
+
+    // 报警(Phase 3.0)
+    AlarmEngine           *mAlarmEngine   = nullptr;
+    AlarmPanel            *mAlarmPanel    = nullptr;
+    AlarmNotifier         *mAlarmNotifier = nullptr;
+    QDockWidget           *mAlarmDock     = nullptr;
+    QPushButton           *mAlarmBtn      = nullptr;
 
     QComboBox  *mSourceCombo = nullptr;
     QPushButton *mStartBtn   = nullptr;

@@ -21,7 +21,10 @@ HEADERS += \
     DataSource/ModbusTcpSource.h \
     DataSource/ModbusRtuSource.h \
     History/HistoryRecorder.h \
-    History/HistoryPanel.h
+    History/HistoryPanel.h \
+    Alarm/AlarmEngine.h \
+    Alarm/AlarmPanel.h \
+    Alarm/AlarmNotifier.h
 
 SOURCES += \
     main.cpp \
@@ -30,9 +33,10 @@ SOURCES += \
     DataSource/ModbusTcpSource.cpp \
     DataSource/ModbusRtuSource.cpp \
     History/HistoryRecorder.cpp \
-    History/HistoryPanel.cpp
+    History/HistoryPanel.cpp \
+    Alarm/AlarmEngine.cpp \
+    Alarm/AlarmPanel.cpp \
+    Alarm/AlarmNotifier.cpp
 
 # ---- 后续 Phase 启用 ----
 # DataSource/MqttSource.h/cpp (需 QT += mqtt)
-# Alarm/AlarmEngine.h/cpp
-# Alarm/Notifier.h/cpp
