@@ -1,0 +1,204 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/QSimpleScadaSample_autogen",
+	"CMAKE_BINARY_DIR" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/QSimpleScada-Qt6Demo/Sample",
+	"CMAKE_EXECUTABLE" : "D:/QT/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/QSimpleScada-Qt6Demo/Sample/CMakeLists.txt",
+		"D:/QSimpleScada-Qt6Demo/QSimpleScadaWidgets/widgets.qrc",
+		"D:/QSimpleScada-Qt6Demo/QSimpleScadaExtensions/extensions.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/QSimpleScada-Qt6Demo",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/QSimpleScadaSample_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "QSimpleScadaSample_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/Alarm/AlarmEngine.h",
+			"MU",
+			"X3F6PMOLPN/moc_AlarmEngine.cpp",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/Alarm/AlarmNotifier.h",
+			"MU",
+			"X3F6PMOLPN/moc_AlarmNotifier.cpp",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/Alarm/AlarmPanel.h",
+			"MU",
+			"X3F6PMOLPN/moc_AlarmPanel.cpp",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/DataSource/IoSimulator.h",
+			"MU",
+			"LOE62FT54S/moc_IoSimulator.cpp",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/DataSource/ModbusRtuSource.h",
+			"MU",
+			"LOE62FT54S/moc_ModbusRtuSource.cpp",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/DataSource/ModbusTcpSource.h",
+			"MU",
+			"LOE62FT54S/moc_ModbusTcpSource.cpp",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/History/HistoryPanel.h",
+			"MU",
+			"HPV5IK4SYM/moc_HistoryPanel.cpp",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/History/HistoryRecorder.h",
+			"MU",
+			"HPV5IK4SYM/moc_HistoryRecorder.cpp",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/MainWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_MainWindow.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/QSimpleScadaSample_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/QSimpleScadaSample_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_OPENGL_LIB",
+		"QT_QMLINTEGRATION_LIB",
+		"QT_QMLMETA_LIB",
+		"QT_QMLMODELS_LIB",
+		"QT_QMLWORKERSCRIPT_LIB",
+		"QT_QML_LIB",
+		"QT_QUICKWIDGETS_LIB",
+		"QT_QUICK_LIB",
+		"QT_SERIALBUS_LIB",
+		"QT_SERIALPORT_LIB",
+		"QT_SQL_LIB",
+		"QT_WIDGETS_LIB",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/QSimpleScada-Qt6Demo",
+		"D:/QT/6.9.3/mingw_64/include/QtCore",
+		"D:/QT/6.9.3/mingw_64/include",
+		"D:/QT/6.9.3/mingw_64/mkspecs/win32-g++",
+		"D:/QT/6.9.3/mingw_64/include/QtGui",
+		"D:/QT/6.9.3/mingw_64/include/QtWidgets",
+		"D:/QT/6.9.3/mingw_64/include/QtQml",
+		"D:/QT/6.9.3/mingw_64/include/QtQmlIntegration",
+		"D:/QT/6.9.3/mingw_64/include/QtNetwork",
+		"D:/QT/6.9.3/mingw_64/include/QtQuick",
+		"D:/QT/6.9.3/mingw_64/include/QtQmlMeta",
+		"D:/QT/6.9.3/mingw_64/include/QtQmlModels",
+		"D:/QT/6.9.3/mingw_64/include/QtQmlWorkerScript",
+		"D:/QT/6.9.3/mingw_64/include/QtOpenGL",
+		"D:/QT/6.9.3/mingw_64/include/QtQuickWidgets",
+		"D:/QT/6.9.3/mingw_64/include/QtSerialBus",
+		"D:/QT/6.9.3/mingw_64/include/QtSerialPort",
+		"D:/QT/6.9.3/mingw_64/include/QtSql",
+		"D:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"D:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"D:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"D:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"D:/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"D:/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/QT/Tools/mingw1310_64/bin/c++.exe",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/QT/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/QSimpleScadaSample_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/QSimpleScadaSample_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/QT/6.9.3/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/QT/6.9.3/mingw_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/QSimpleScadaSample_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "D:/QSimpleScada-Qt6Demo/Sample/Alarm/AlarmEngine.cpp", "MU", null ],
+		[ "D:/QSimpleScada-Qt6Demo/Sample/Alarm/AlarmNotifier.cpp", "MU", null ],
+		[ "D:/QSimpleScada-Qt6Demo/Sample/Alarm/AlarmPanel.cpp", "MU", null ],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/DataSource/IoSimulator.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/DataSource/ModbusRtuSource.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/DataSource/ModbusTcpSource.cpp",
+			"MU",
+			null
+		],
+		[ "D:/QSimpleScada-Qt6Demo/Sample/History/HistoryPanel.cpp", "MU", null ],
+		[
+			"D:/QSimpleScada-Qt6Demo/Sample/History/HistoryRecorder.cpp",
+			"MU",
+			null
+		],
+		[ "D:/QSimpleScada-Qt6Demo/Sample/MainWindow.cpp", "MU", null ],
+		[ "D:/QSimpleScada-Qt6Demo/Sample/main.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

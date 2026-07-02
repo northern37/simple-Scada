@@ -1,0 +1,5 @@
+set(__QT_DEPLOY_TARGET_QSimpleScadaSample_FILE D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/QSimpleScadaSample.exe)
+set(__QT_DEPLOY_TARGET_QSimpleScadaSample_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_QSimpleScadaSample_RUNTIME_DLLS D:/QT/6.9.3/mingw_64/bin/Qt6SerialBus.dll;D:/QT/6.9.3/mingw_64/bin/Qt6Sql.dll;D:/QT/6.9.3/mingw_64/bin/Qt6QuickWidgets.dll;D:/QT/6.9.3/mingw_64/bin/Qt6Widgets.dll;D:/QT/6.9.3/mingw_64/bin/Qt6Quick.dll;D:/QT/6.9.3/mingw_64/bin/Qt6QmlMeta.dll;D:/QT/6.9.3/mingw_64/bin/Qt6QmlWorkerScript.dll;D:/QT/6.9.3/mingw_64/bin/Qt6QmlModels.dll;D:/QT/6.9.3/mingw_64/bin/Qt6Qml.dll;D:/QT/6.9.3/mingw_64/bin/Qt6OpenGL.dll;D:/QT/6.9.3/mingw_64/bin/Qt6Gui.dll;D:/QT/6.9.3/mingw_64/bin/Qt6Network.dll;D:/QT/6.9.3/mingw_64/bin/Qt6SerialPort.dll;D:/QT/6.9.3/mingw_64/bin/Qt6Core.dll)
+set(__QT_DEPLOY_TARGET_QScadaLib_FILE D:/QSimpleScada-Qt6Demo/Sample/build-cmake/libQScadaLib.a)
+set(__QT_DEPLOY_TARGET_QScadaLib_TYPE STATIC_LIBRARY)

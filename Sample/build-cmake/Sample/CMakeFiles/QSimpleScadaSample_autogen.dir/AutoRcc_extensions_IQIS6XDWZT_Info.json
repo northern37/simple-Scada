@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/QSimpleScadaSample_autogen",
+	"CMAKE_BINARY_DIR" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/QSimpleScada-Qt6Demo/Sample",
+	"CMAKE_SOURCE_DIR" : "D:/QSimpleScada-Qt6Demo",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "MinGW Makefiles",
+	"INCLUDE_DIR" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/QSimpleScadaSample_autogen/include",
+	"INPUTS" : 
+	[
+		"D:/QSimpleScada-Qt6Demo/QSimpleScadaExtensions/PieChart.qml",
+		"D:/QSimpleScada-Qt6Demo/QSimpleScadaExtensions/TrendChart.qml",
+		"D:/QSimpleScada-Qt6Demo/QSimpleScadaExtensions/BarGraph.qml",
+		"D:/QSimpleScada-Qt6Demo/QSimpleScadaExtensions/ValueLabel.qml"
+	],
+	"LOCK_FILE" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/QSimpleScadaSample_autogen.dir/AutoRcc_extensions_IQIS6XDWZT_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "extensions" ],
+	"OUTPUT_CHECKSUM" : "IQIS6XDWZT",
+	"OUTPUT_NAME" : "qrc_extensions.cpp",
+	"RCC_EXECUTABLE" : "D:/QT/6.9.3/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/QSimpleScadaSample_autogen.dir/AutoRcc_extensions_IQIS6XDWZT_Used.txt",
+	"SOURCE" : "D:/QSimpleScada-Qt6Demo/QSimpleScadaExtensions/extensions.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

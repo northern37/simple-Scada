@@ -1,0 +1,10 @@
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/CMakeFiles/QScadaLib.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/CMakeFiles/edit_cache.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/CMakeFiles/rebuild_cache.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/CMakeFiles/QScadaLib_autogen_timestamp_deps.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/CMakeFiles/QScadaLib_autogen.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/QSimpleScadaSample.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/edit_cache.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/rebuild_cache.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/QSimpleScadaSample_autogen_timestamp_deps.dir
+D:/QSimpleScada-Qt6Demo/Sample/build-cmake/Sample/CMakeFiles/QSimpleScadaSample_autogen.dir

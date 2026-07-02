@@ -1,32 +1,57 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+# Qt / C++ build artifacts
 *.o
 *.obj
+*.moc
+*_moc.cpp
+moc_*.cpp
+moc_predefs.h
+ui_*.h
+qrc_*.cpp
+*.pro.user
+*.pro.user.*
+Makefile
+Makefile.*
+*.Debug
+*.Release
+object_script.*
+*.app
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
+# Compiled libs (careful: keep .dll in vendor dirs if needed)
 *.so
 *.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
 *.a
-*.lib
+*.la
+*.lai
 
-# Executables
-*.exe
-*.out
-*.app
+# Debug symbol files
+*.pdb
+*.ilk
+*.exp
+
+# Qt Creator
+*.autosave
+*.creator.user
+*.files
+*.includes
+
+# VS Code
+.vscode/
+
+# Build output
+build/
+*-build/
+release/
+debug/
+
+# Package output
+package/
+
+# IDE
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# QSimpleScadaWidgets 原始库中的二进制文件（从 GitHub 拉下来的，不动）
+# QSimpleScadaExtensions/ 中的自定义 QML 文件需要提交
