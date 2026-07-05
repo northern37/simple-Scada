@@ -55,3 +55,5 @@ Thumbs.db
 
 # QSimpleScadaWidgets 原始库中的二进制文件（从 GitHub 拉下来的，不动）
 # QSimpleScadaExtensions/ 中的自定义 QML 文件需要提交
+.trae/
+.qtcreator/
